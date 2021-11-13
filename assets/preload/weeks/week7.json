@@ -1,0 +1,57 @@
+{
+	"storyName": "smoke 'em out struggle",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"weekCharacters": [
+		"garcello",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"headache",
+			"garcello",
+			[
+				178,
+				113,
+				255
+			]
+		],
+		[
+			"nerves",
+			"garcellotired",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"release",
+			"garcellodead",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"fading",
+			"garcelloghosty",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"weekName": "Garcello week"
+}
