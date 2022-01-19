@@ -92,7 +92,7 @@ class Character extends FlxSprite
 		switch (curCharacter)
 		{
 			//case 'your character name in case you want to hardcode him instead':
-		case 'garcello':
+		/*case 'garcello':
 				// GARCELLO ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('characters/garcello_assets');
 				frames = tex;
@@ -153,7 +153,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'garcello Sing Note DOWN', 24);
 				animation.addByPrefix('singLEFT', 'garcello Sing Note LEFT', 24);
 
-				animation.addByPrefix('garTightBars', 'garcello coolguy', 15);
+				animation.addByPrefix('garTightBars', 'garcello coolguy', 24);
 
 				addOffset('idle');
 				addOffset("singUP", 0, 0);
@@ -185,7 +185,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, 0);
 				addOffset("garTightBars", 0, 0);
 
-				playAnim('idle');
+				playAnim('idle');*/
 			default:
 				var characterPath:String = 'characters/' + curCharacter + '.json';
 				#if MODS_ALLOWED

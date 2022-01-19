@@ -5,128 +5,97 @@
 				0,
 				0
 			],
-			"loop": true,
+			"indices": [],
 			"fps": 24,
-			"anim": "idle-loop",
-			"indices": [
-				10,
-				11,
-				12,
-				12
-			],
-			"name": "Dad idle dance"
-		},
-		{
-			"offsets": [
-				-9,
-				10
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singLEFT-loop",
-			"indices": [
-				12,
-				13,
-				14,
-				15
-			],
-			"name": "Dad Sing Note LEFT"
-		},
-		{
-			"offsets": [
-				0,
-				27
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singRIGHT-loop",
-			"indices": [
-				15,
-				16,
-				17,
-				18
-			],
-			"name": "Dad Sing Note RIGHT"
-		},
-		{
-			"offsets": [
-				-6,
-				50
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singUP-loop",
-			"indices": [
-				56,
-				57,
-				58,
-				59
-			],
-			"name": "Dad Sing Note UP"
-		},
-		{
+			"anim": "idle",
 			"loop": false,
-			"offsets": [
-				-6,
-				50
-			],
-			"anim": "singUP",
-			"fps": 24,
-			"name": "garcellotired Sing Note UP",
-			"indices": []
+			"name": "garcellotired idle dance"
 		},
 		{
-			"loop": false,
-			"offsets": [
-				0,
-				-30
-			],
-			"anim": "singDOWN",
-			"fps": 24,
-			"name": "garcellotired Sing Note DOWN",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-9,
-				10
-			],
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "garcellotired Sing Note LEFT",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				0,
-				27
-			],
-			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "garcellotired Sing Note RIGHT",
-			"indices": []
-		},
-		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"indices": [],
 			"fps": 24,
-			"name": "garcellotired idle dance",
-			"indices": []
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "garcellotired Sing Note DOWN"
 		},
 		{
 			"offsets": [
-				140,
-				-100
+				0,
+				0
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "hey",
+			"anim": "singUP",
+			"loop": false,
+			"name": "garcellotired Sing Note UP"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "garcellotired Sing Note LEFT"
+		},
+		{
+			"offsets": [
+				10,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "garcellotired Sing Note RIGHT"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"loop": false,
+			"name": "garcellotired Sing Note RIGHT"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"loop": false,
+			"name": "garcellotired Sing Note LEFT"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP-alt",
+			"loop": false,
+			"name": "garcellotired Sing Note UP"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN-alt",
 			"loop": false,
 			"name": "garcellotired cough"
 		}
@@ -137,17 +106,17 @@
 		0,
 		0
 	],
-	"healthicon": "garcello",
+	"healthicon": "garcellotired",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		142,
+		64,
+		165
 	],
 	"camera_position": [
 		0,
 		0
 	],
-	"sing_duration": 6.1,
+	"sing_duration": 4,
 	"scale": 1
 }

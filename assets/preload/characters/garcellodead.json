@@ -14,12 +14,12 @@
 				12,
 				12
 			],
-			"name": "Dad idle dance"
+			"name": "garcello idle dance"
 		},
 		{
 			"offsets": [
-				-9,
-				10
+				0,
+				0
 			],
 			"loop": true,
 			"fps": 24,
@@ -30,12 +30,12 @@
 				14,
 				15
 			],
-			"name": "Dad Sing Note LEFT"
+			"name": "garcello Sing Note LEFT"
 		},
 		{
 			"offsets": [
 				0,
-				27
+				0
 			],
 			"loop": true,
 			"fps": 24,
@@ -46,12 +46,12 @@
 				17,
 				18
 			],
-			"name": "Dad Sing Note RIGHT"
+			"name": "garcello Sing Note RIGHT"
 		},
 		{
 			"offsets": [
-				-6,
-				50
+				0,
+				0
 			],
 			"loop": true,
 			"fps": 24,
@@ -62,24 +62,24 @@
 				58,
 				59
 			],
-			"name": "Dad Sing Note UP"
+			"name": "garcello Sing Note UP"
 		},
 		{
 			"loop": false,
 			"offsets": [
-				140,
-				-100
+				0,
+				0
 			],
 			"anim": "hey",
 			"fps": 24,
-			"name": "WhatYouKnowAboutRollingDownInTheDeep",
+			"name": "garcello coolguy",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
 				0,
-				27
+				0
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
@@ -89,8 +89,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-9,
-				10
+				0,
+				0
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -100,8 +100,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-6,
-				50
+				0,
+				0
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -123,7 +123,7 @@
 			"loop": false,
 			"offsets": [
 				0,
-				-30
+				0
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -137,7 +137,7 @@
 		0,
 		0
 	],
-	"healthicon": "garcello",
+	"healthicon": "garcellodead",
 	"flip_x": false,
 	"healthbar_colors": [
 		175,
