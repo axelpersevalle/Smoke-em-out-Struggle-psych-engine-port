@@ -538,6 +538,7 @@ class PlayState extends MusicBeatState
 
 				case 'garstage':
 					{
+							 if(!ClientPrefs.lowQuality) {
 							 defaultCamZoom = 0.9;
 							 curStage = 'garAlley';
 				
@@ -552,11 +553,23 @@ class PlayState extends MusicBeatState
 							 bgAlley.scrollFactor.set(0.9, 0.9);
 							 bgAlley.active = false;
 							 add(bgAlley);
+							 }
+							 if(ClientPrefs.lowQuality) {
+							 defaultCamZoom = 0.9;
+							 curStage = 'garAlley';
+				
+							 var bgAlley:FlxSprite = new FlxSprite(-500, -200).loadGraphic(Paths.image('garcello/garStage_low'));
+							 bgAlley.antialiasing = true;
+							 bgAlley.scrollFactor.set(0.9, 0.9);
+							 bgAlley.active = false;
+							 add(bgAlley);
+							 }
 				
 					   }
 				case 'garAlleyDead':
 				   {
-							 defaultCamZoom = 0.9;
+					   		if(!ClientPrefs.lowQuality) {
+								   defaultCamZoom = 0.9;
 							 curStage = 'garAlleyDead';
 				
 							 var bg:FlxSprite = new FlxSprite(-500, -170).loadGraphic(Paths.image('garcello/garStagebgAlt'));
@@ -585,6 +598,24 @@ class PlayState extends MusicBeatState
 							 corpse.scrollFactor.set(0.9, 0.9);
 							 corpse.active = false;
 							 add(corpse);
+				}
+				if(ClientPrefs.lowQuality) {
+								   defaultCamZoom = 0.9;
+							 curStage = 'garAlleyDead';
+				
+							 var bg:FlxSprite = new FlxSprite(-500, -170).loadGraphic(Paths.image('garcello/garStagebgAlt_low'));
+							 bg.antialiasing = true;
+							 bg.scrollFactor.set(0.7, 0.7);
+							 bg.active = false;
+							 add(bg);
+				
+							 var corpse:FlxSprite = new FlxSprite(-230, 540).loadGraphic(Paths.image('garcello/gardead'));
+							 corpse.antialiasing = true;
+							 corpse.scrollFactor.set(0.9, 0.9);
+							 corpse.active = false;
+							 add(corpse);
+				}
+							 
 					   }
 				
 				case 'garAlleyDip':
@@ -2634,18 +2665,20 @@ class PlayState extends MusicBeatState
 	public function triggerEventNote(eventName:String, value1:String, value2:String) {
 		switch(eventName) {
 			case 'Hey!':
-				var value:Int = 2;
+				var value:Int = 4;
 				switch(value1.toLowerCase().trim()) {
 					case 'bf' | 'boyfriend' | '0':
 						value = 0;
 					case 'gf' | 'girlfriend' | '1':
 						value = 1;
+					case 'opp' | 'opponent' | '2':
+						value = 2;
 				}
 
 				var time:Float = Std.parseFloat(value2);
 				if(Math.isNaN(time) || time <= 0) time = 0.6;
 
-				if(value != 0) {
+				if(value == 1) {
 					if(dad.curCharacter.startsWith('gf')) { //Tutorial GF is actually Dad! The GF is an imposter!! ding ding ding ding ding ding ding, dindinding, end my suffering
 						dad.playAnim('cheer', true);
 						dad.specialAnim = true;
@@ -2661,11 +2694,32 @@ class PlayState extends MusicBeatState
 						heyTimer = time;
 					}
 				}
-				if(value != 1) {
+				if(value == 0) {
 					boyfriend.playAnim('hey', true);
 					boyfriend.specialAnim = true;
 					boyfriend.heyTimer = time;
 				}
+				if(value == 2) {
+					dad.playAnim('hey', true);
+					dad.specialAnim = true;
+					dad.heyTimer = time;
+				}
+
+				if(value != 0 && value!=1 && value != 2){
+					if(dad.curCharacter.startsWith('gf')) { //Tutorial GF is actually Dad! The GF is an imposter!! ding ding ding ding ding ding ding, dindinding, end my suffering
+						dad.playAnim('cheer', true);
+						dad.specialAnim = true;
+						dad.heyTimer = time;
+					} else {
+						gf.playAnim('cheer', true);
+						gf.specialAnim = true;
+						gf.heyTimer = time;
+					}
+					boyfriend.playAnim('hey', true);
+					boyfriend.specialAnim = true;
+					boyfriend.heyTimer = time;
+				}
+			
 
 			case 'Set GF Speed':
 				var value:Int = Std.parseInt(value1);
@@ -2875,6 +2929,41 @@ class PlayState extends MusicBeatState
 					}
 				}
 
+				/*new FlxTimer().start(0.1, function(tmr:FlxTimer)
+					{
+						dad.alpha -= 0.05;
+						iconP2.alpha -= 0.05;
+	
+						if (dad.alpha > 0)
+						{
+							tmr.reset(0.1);
+						}	*/
+
+			/*case 'fading':
+				var duration:Float = Std.parseFloat(value1);
+				var targetAlpha:Float = Std.parseFloat(value2);
+				var po:Float = duration / targetAlpha;
+				targetAlpha = targetAlpha * 0.01;
+				//if (duration < 0) {
+				//	duration = 0;
+				//}
+		
+				if (duration == 0){
+					dad.alpha = targetAlpha;
+					iconP2.alpha = targetAlpha;
+				}
+				else{
+					//new FlxTimer().start(duration, function(tmr:FlxTimer)
+				//{
+					//dad.alpha -= 0.5;
+					//iconP2.alpha -= 0.5;
+				//});
+				if (dad.alpha != 0){
+					dad.alpha -= 0.05;
+					iconP2.alpha -= 0.05;
+					Sys.sleep(0.1);
+				}
+				}*/
 
 			case 'Change Character':
 				var charType:Int = 0;
@@ -3129,6 +3218,8 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
+					var today = Date.now();
+					trace(today);
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 
 					cancelFadeTween();
@@ -3946,23 +4037,23 @@ class PlayState extends MusicBeatState
 	var lastStepHit:Int = -1;
 	override function stepHit()
 	{
-		if (dad.curCharacter == 'garcellodead' && SONG.song.toLowerCase() == 'release')
-			{
-				if (curStep == 838)
-				{
-					dad.playAnim('garTightBars', true);
-				}
-			}
+		//if (dad.curCharacter == 'garcellodead' && SONG.song.toLowerCase() == 'release') buggy anim, event created
+			//{
+				//if (curStep == 838)
+				//{
+					//dad.playAnim('garTightBars', true);
+				//}
+			//}
 	
 			if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
 			{
 				if (curStep == 247)
 				{
-					dad.playAnim('garFarewell', true);
+					dad.playAnim('hey', true);
 				}
 			}
 	
-			if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
+			/*if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
 			{
 				if (curStep == 240)
 				{
@@ -3977,7 +4068,7 @@ class PlayState extends MusicBeatState
 						}
 					});
 				}
-			}
+			}*/
 		
 		super.stepHit();
 		if (FlxG.sound.music.time > Conductor.songPosition + 20 || FlxG.sound.music.time < Conductor.songPosition - 20)
